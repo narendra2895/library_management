@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block data %}
+
+<form action="insert_record" method="post">
+    {% csrf_token %}
+    <input type="text" name="bname" placeholder="Enter book name" required>
+    <input type="text" name="bauthor" placeholder="Enter author name" required>
+    <textarea name="bdesc" id="" cols="30" rows="10" placeholder="Enter description of book"></textarea>
+    <textarea name="blink" id="" cols="30" rows="10" placeholder="Link for downloading the book"></textarea>
+    <input class="btn" type="submit" name="submit">
+
+
+</form>
+
+{% endblock %}

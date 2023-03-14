@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block data %}
+
+<form action="/edit/{{data.id}}" method="post">
+    {% csrf_token %}
+    <input type="text" name="bname" value="{{data.bname}}" required>
+    <input type="text" name="bauthor" value="{{data.bauthor}}" required>
+    <textarea name="bdesc" id="" cols="30" rows="10">{{data.bdesc}}</textarea>
+    <textarea name="blink" id="" cols="30" rows="10">{{data.blink}}</textarea>
+    <input class="btn" type="submit" name="submit">
+
+
+</form>
+
+{% endblock %}

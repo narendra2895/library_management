@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block data %}
+<div class="book-box">
+    <h1>Welcome to my free library</h1>
+    <div class="bookcontainer">
+        {% for d in data %}
+        <div class="book">
+            <h2>{{d.bname}}</h2>
+            <h3>by {{d.bauthor}}</h3>
+            <p>{{d.bdesc}}</p>
+            <div class="button">
+                <a class="btn" href="{{d.blink}}" target="_blank">Download now</a>
+
+                <a href="/edit/{{d.id}}" class="btn">Edit</a>
+                <a href="/delete/{{d.id}}" class="btn">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
